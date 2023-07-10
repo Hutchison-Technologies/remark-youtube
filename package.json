@@ -18,9 +18,8 @@
     "test": "node --loader ts-node/esm --test --no-warnings ./src/*.test.ts",
     "clean": "rimraf ./dist",
     "build-esm": "tsc",
-    "build-cjs": "tsc -p ./tsconfig.cjs.json && ts-rename --cjs ./dist/cjs",
     "build-types": "tsc -p ./tsconfig.types.json",
-    "build": "npm run clean && npm run build-esm && npm run build-cjs && npm run build-types",
+    "build": "npm run clean && npm run build-esm && npm run build-types",
     "prepare": "npm run build",
     "format": "prettier --check src",
     "format-fix": "prettier --write src",
@@ -45,11 +44,11 @@
   ],
   "license": "MIT",
   "engines": {
-    "node": ">= 18"
+    "node": ">= 16.16.0"
   },
   "devDependencies": {
     "@types/mdast": "^3.0.11",
-    "@types/node": "^18.15.13",
+    "@types/node": "^16.16.0",
     "prettier": "^2.8.7",
     "rehype-stringify": "^9.0.3",
     "release-it": "^15.10.1",
@@ -57,7 +56,6 @@
     "remark-parse": "^10.0.1",
     "rimraf": "^5.0.0",
     "ts-node": "^10.9.1",
-    "ts-rename": "^0.1.0",
     "typescript": "^5.0.4",
     "unified": "^10.1.2"
   },
